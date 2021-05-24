@@ -31,6 +31,9 @@ const cmd: CMD = {
       const target_user = message.mentions.users.first();
       const target_member = message.mentions.members?.first();
 
+      if (!target_user?.id)
+        return message.channel.send("I cannot find this guardian.");
+
       if (stuckInTheShadowRealm_role)
         target_member?.roles.remove(stuckInTheShadowRealm_role);
 
