@@ -37,4 +37,4 @@ const getReq = (url: string, headers: object): AxiosPromise<any> => {
 //  return profileComps;
 //};
 //
-//export { getReq, getProfileComps };
+export { getReq };
