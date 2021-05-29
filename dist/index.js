@@ -1,11 +1,21 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.commands = exports.APIKEY = exports.prefix = void 0;
+exports.commands = exports.get = exports.APIKEY = exports.prefix = void 0;
+const axios_1 = require("axios");
 const D = require("discord.js");
 const fs = require("fs");
 require("dotenv").config();
 exports.prefix = "//";
 exports.APIKEY = process.env.APIKEY;
+const get = async (url, headers) => {
+    const res = await axios_1.default({
+        method: "GET",
+        url: url,
+        headers: headers,
+    });
+    return res.data;
+};
+exports.get = get;
 class Bot extends D.Client {
     constructor(MCL = 180, MCMS = 200, MEHMS = 200, MSI = 200) {
         super({
@@ -56,5 +66,5 @@ for (var f of command_fArr) {
     exports.commands.set(cmd.name, cmd);
 }
 client.listen();
-client._login();
+client._login().catch(err => console.error(err));
 //# sourceMappingURL=index.js.map

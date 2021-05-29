@@ -6,4 +6,5 @@ export interface CMD {
     exec: Function;
     usage: string;
 }
+export declare const get: (url: string, headers: object) => Promise<any>;
 export declare let commands: D.Collection<string, CMD>;

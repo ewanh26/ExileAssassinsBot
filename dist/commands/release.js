@@ -13,6 +13,8 @@ const cmd = {
             const shadowRealm_vc = message.guild?.channels.cache.find(c => c.id === "845009833438609448");
             const target_user = message.mentions.users.first();
             const target_member = message.mentions.members?.first();
+            if (!target_user?.id)
+                return message.channel.send("I cannot find this guardian.");
             if (stuckInTheShadowRealm_role)
                 target_member?.roles.remove(stuckInTheShadowRealm_role);
             if (shadowRealm_vc)

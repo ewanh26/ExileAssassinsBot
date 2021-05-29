@@ -1,10 +1,11 @@
 {
   "name": "exileassassinsbot",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "",
   "main": "dist/index.js",
   "dependencies": {
     "@types/ws": "^7.4.4",
+    "axios": "^0.21.1",
     "discord.js": "^12.5.3",
     "dotenv": "^10.0.0"
   },
