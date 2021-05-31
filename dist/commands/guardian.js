@@ -10,7 +10,9 @@ const cmd = {
         let profile_res;
         const basic_emb = new d.MessageEmbed();
         for (let i = 0; i < 6; i++) {
-            utils_1.getReq(`https://www.bungie.net/Platform/Destiny2/SearchDestinyPlayer/${i}/${args[0]}/`, { "X-API-Key": index_1.APIKEY })
+            utils_1.getReq(`https://www.bungie.net/Platform/Destiny2/SearchDestinyPlayer/${i}/${args
+                .slice(0)
+                .join(" ")}/`, { "X-API-Key": index_1.APIKEY })
                 .then(res => {
                 profile_res = res.data.Response || undefined;
                 if (profile_res) {

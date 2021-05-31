@@ -11,7 +11,9 @@ const cmd: CMD = {
     const basic_emb = new d.MessageEmbed() as MessageEmbed;
     for (let i = 0; i < 6; i++) {
       getReq(
-        `https://www.bungie.net/Platform/Destiny2/SearchDestinyPlayer/${i}/${args[0]}/`,
+        `https://www.bungie.net/Platform/Destiny2/SearchDestinyPlayer/${i}/${args
+          .slice(0)
+          .join(" ")}/`,
         { "X-API-Key": APIKEY }
       )
         .then(res => {
