@@ -11,15 +11,6 @@ export interface CMD {
   usage: string;
 }
 
-export const get = async (url: string, headers: object) => {
-  const res = await axios({
-    method: "GET",
-    url: url,
-    headers: headers,
-  });
-  return res.data;
-};
-
 class Bot extends D.Client {
   public constructor(MCL = 180, MCMS = 200, MEHMS = 200, MSI = 200) {
     super({
