@@ -19,6 +19,7 @@ export const get = async (url: string, headers: object) => {
   });
   return res.data;
 };
+
 class Bot extends D.Client {
   public constructor(MCL = 180, MCMS = 200, MEHMS = 200, MSI = 200) {
     super({
